@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Slideshow</title>
+</head>
+<body>
+
+    <script>
+
+        let i = 0; // start point
+        let images = [];
+        let time = 3000;
+
+        // Image List
+        images[0] = 'big1.jpeg';
+        images[1] = 'big2.jpeg';
+        images[2] = 'big3.jpeg';
+        images[3] = 'big4.jpeg';
+        images[4] = 'big5.jpeg';
+
+        //change Image
+        function changeImg(){
+            document.slide.src = images[i];
+
+            if(i < images.length - 1){
+                i++;
+            } else {
+                i = 0;
+            }
+
+            setTimeout("changeImg()", time);
+
+        }
+        window.onload=changeImg;
+    </script>
+    <img name="slide" width="600px" height="400px">
+</body>
+</html>
